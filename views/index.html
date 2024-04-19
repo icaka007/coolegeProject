@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>College Management System</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/departments">Departments</a>
+                <a href="/courses">Courses</a>
+                <a href="/professors">Professors</a>
+                <a href="/students">Students</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Action buttons to show login or registration form -->
+            <section class="user-actions">
+                <button id="showLoginBtn">Login</button>
+                <button id="showRegisterBtn">Register</button>
+            </section>
+
+            <!-- Login Form (Initially hidden) -->
+            <section class="login" id="loginSection" style="display:none;">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                    <input type="submit" value="Login" class="btn">
+                </form>
+            </section>
+
+            <!-- Registration Form (Initially hidden) -->
+            <section class="registration" id="registerSection" style="display:none;">
+                <h2>Register</h2>
+                <form id="registrationForm">
+                    <input type="text" id="registerName" name="name" placeholder="Full Name" required>
+                    <input type="email" id="registerEmail" name="email" placeholder="Email" required>
+                    <input type="password" id="registerPassword" name="password" placeholder="Password" required>
+                    <select id="registerRole" name="role">
+                        <option value="student">Student</option>
+                        <option value="professor">Professor</option>
+                        <option value="headOfDepartment">Head of Department</option>
+                        <option value="administrator">Administrator</option>
+                    </select>
+                    <input type="submit" value="Register" class="btn">
+                </form>
+            </section>
+
+            <!-- News Section -->
+            <section class="news">
+                <h2>Latest College News</h2>
+                <article>
+                    <h3>New Course Announcement</h3>
+                    <p>We're excited to announce a new course in our Computer Science department: Advanced AI Techniques.</p>
+                </article>
+                <article>
+                    <h3>Upcoming Event: Science Fair 2024</h3>
+                    <p>Join us for our annual Science Fair to see groundbreaking projects from our students.</p>
+                </article>
+            </section>
+
+            <!-- About Section -->
+            <section class="about">
+                <h2>About Our College</h2>
+                <p>Our college is committed to excellence in education, providing the best learning environment for students and supporting faculty research and innovation.</p>
+            </section>
+
+            <!-- Departments Section -->
+            <section class="departments">
+                <h2>Our Departments</h2>
+                <div class="department-list">
+                    <article>
+                        <h3>Computer Science</h3>
+                        <p>Explore the digital realm with our diverse range of courses, from theoretical foundations to cutting-edge developments in computer science.</p>
+                    </article>
+                    <article>
+                        <h3>Engineering</h3>
+                        <p>Our engineering department boasts a rigorous program that prepares students for a thriving career in various engineering fields.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <form action="/send-message" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 College Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Include the script that handles showing and hiding forms -->
+    <script src="../public/js/auth.js"></script>  <!-- Defines AuthManager -->
+    <script src="../public/js/form-toggle.js"></script>
+            
+</body>
+</html>
